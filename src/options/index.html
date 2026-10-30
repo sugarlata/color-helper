@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Color Palette Helper settings</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main>
+      <header><h1>Color Palette Helper</h1></header>
+      <nav class="tabs" role="tablist" aria-label="Settings sections">
+        <button id="general-tab" role="tab" aria-selected="true" aria-controls="general-panel">General</button>
+        <button id="palettes-tab" role="tab" aria-selected="false" aria-controls="palettes-panel" tabindex="-1">Palettes</button>
+      </nav>
+
+      <div id="general-panel" role="tabpanel" aria-labelledby="general-tab">
+        <section class="card">
+          <h2>Dial appearance</h2>
+          <div class="fields">
+            <label>Outer diameter (px)<input id="diameter" type="number" min="80" max="800" step="1"></label>
+            <label>Ring width (px)<input id="thickness" type="number" min="5" max="300" step="1"></label>
+            <label>Opacity<input id="opacity" type="number" min="0.1" max="1" step="0.05"></label>
+            <label>Dial rotation (degrees)<input id="rotation" type="number" min="0" max="360" step="1"></label>
+          </div>
+        </section>
+      </div>
+
+      <div id="palettes-panel" role="tabpanel" aria-labelledby="palettes-tab" hidden>
+        <section class="card" aria-labelledby="active-palette-heading">
+          <h2 id="active-palette-heading">Palette in use</h2>
+          <div class="palette-picker"><label for="active-palette-select">Active palette</label><select id="active-palette-select"></select></div>
+        </section>
+        <section class="card" aria-labelledby="manage-palettes-heading">
+          <div class="management-heading">
+            <h2 id="manage-palettes-heading">Edit palettes</h2>
+            <div class="management-actions"><button id="new-palette">Create palette</button><button id="import">Import JSON</button></div>
+          </div>
+          <div class="editor-toolbar">
+            <div class="palette-picker"><label for="palette-select">Palette to edit</label><select id="palette-select"></select></div>
+            <button id="export">Export JSON</button>
+            <button id="delete" class="danger">Delete</button>
+          </div>
+          <input id="file" type="file" accept="application/json,.json" hidden>
+        </section>
+        <section class="card">
+          <h2>Palette details</h2>
+          <div class="fields">
+            <label>Name<input id="name" required></label>
+            <label>Description<input id="description"></label>
+            <label>Colour system<input id="system"></label>
+          </div>
+        </section>
+        <section class="card">
+          <div class="section-title"><div><h2>Colours</h2><p id="colour-count"></p></div><button id="add-colour">Add colour</button></div>
+          <p class="hint">Select the star for stronger colours. Their dial segments extend beyond the normal outer edge.</p>
+          <div class="colour-headings" aria-hidden="true"><span>Order</span><span></span><span>Name</span><span>HEX</span><span>Strong</span><span></span></div>
+          <div id="colours" class="colours"></div>
+        </section>
+      </div>
+
+      <div class="savebar"><p id="status" role="status"></p><button id="save" class="primary">Save changes</button></div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 2,
+  "id": "rainbow-example",
+  "name": "Rainbow",
+  "description": "A simple seven-colour example palette",
+  "system": "Example",
+  "source": {
+    "type": "built-in-example",
+    "description": "Generic example colours supplied with the extension."
+  },
+  "colors": [
+    { "name": "Red", "hex": "#E53935" },
+    { "name": "Orange", "hex": "#FB8C00" },
+    { "name": "Yellow", "hex": "#FDD835" },
+    { "name": "Green", "hex": "#43A047" },
+    { "name": "Blue", "hex": "#1E88E5" },
+    { "name": "Indigo", "hex": "#3949AB" },
+    { "name": "Violet", "hex": "#8E24AA" }
+  ]
+}
